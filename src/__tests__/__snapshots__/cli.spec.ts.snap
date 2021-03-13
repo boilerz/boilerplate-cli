@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cli should setup cli 1`] = `
+Array [
+  Array [
+    "
+  Usage
+    $ boilerplate
+  Options
+    --preferences, -p  Setup preferences.
+  Examples
+    $ boilerplate -p
+",
+    Object {
+      "flags": Object {
+        "preferences": Object {
+          "alias": "p",
+          "type": "boolean",
+        },
+      },
+    },
+  ],
+]
+`;
