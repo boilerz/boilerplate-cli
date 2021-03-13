@@ -17,6 +17,10 @@ Array [
           "alias": "p",
           "type": "boolean",
         },
+        "yo": Object {
+          "alias": "y",
+          "type": "boolean",
+        },
       },
     },
   ],

@@ -1,20 +1,13 @@
-import { Flag, Result } from 'meow';
+import { Result } from 'meow';
 import updateNotifier, { Package } from 'update-notifier';
 
 import preferences from './preferences';
-
-export type Flags = {
-  preferences: Flag<'boolean', boolean>;
-};
-
-export interface SubCommand {
-  (
-    result: Pick<Result<Flags>, 'input' | 'pkg' | 'flags'>,
-  ): Promise<void> | void;
-}
+import { Flags, SubCommand } from './typings';
+import yo from './yo';
 
 const subCommands: Record<keyof Flags, SubCommand> = {
   preferences,
+  yo,
 };
 
 export default async function run({

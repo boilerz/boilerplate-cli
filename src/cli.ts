@@ -2,10 +2,12 @@
 import chalk from 'chalk';
 import meow from 'meow';
 
-import run, { Flags } from './commands/run';
+import run from './commands/run';
+import { Flags } from './commands/typings';
 
 const flags: Flags = {
   preferences: { type: 'boolean', alias: 'p' },
+  yo: { type: 'boolean', alias: 'y' },
 };
 
 const cli = meow(

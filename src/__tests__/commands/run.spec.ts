@@ -2,7 +2,8 @@ import { Result } from 'meow';
 import { Package } from 'update-notifier';
 
 import preferences from '../../commands/preferences';
-import run, { Flags } from '../../commands/run';
+import run from '../../commands/run';
+import { Flags } from '../../commands/typings';
 
 jest.mock('../../commands/preferences', () => ({
   __esModule: true,
@@ -29,7 +30,7 @@ describe('commands/run', () => {
   });
 
   it('should run preferences sub command', async () => {
-    const cli = mockCli({ flags: { preferences: true } });
+    const cli = mockCli({ flags: { preferences: true, yo: false } });
     await run(cli);
 
     expect(preferences).toHaveBeenCalled();
