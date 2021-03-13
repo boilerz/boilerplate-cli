@@ -9,7 +9,7 @@
 ### Install
 
 ```bash
-npx install-peerdeps @gh_user/gh_repo_name 
+npm i -g @gh_user/gh_repo_name 
 ```
 
 ### Usage
