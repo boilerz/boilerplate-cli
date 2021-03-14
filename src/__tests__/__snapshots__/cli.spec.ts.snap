@@ -3,26 +3,19 @@
 exports[`cli should setup cli 1`] = `
 Array [
   Array [
-    "
-  Usage
-    $ boilerplate
-  Options
-    --preferences, -p  Setup preferences.
-  Examples
-    $ boilerplate -p
-",
-    Object {
-      "flags": Object {
-        "preferences": Object {
-          "alias": "p",
-          "type": "boolean",
-        },
-        "yo": Object {
-          "alias": "y",
-          "type": "boolean",
-        },
-      },
-    },
+    "my-command <command>
+
+Commands:
+  my-command preferences        Set preferences                     [aliases: p]
+  my-command yo <name> [color]  Say yo                          [aliases: hello]
+
+Options:
+  --version  Show version number                                       [boolean]
+  --help     Show help                                                 [boolean]",
+  ],
+  Array [],
+  Array [
+    "Not enough non-option arguments: got 0, need at least 1",
   ],
 ]
 `;

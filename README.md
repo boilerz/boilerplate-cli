@@ -17,7 +17,7 @@ yarn custom
 
 2. Add `CODECOV_TOKEN` as a secret.
 
-3. Update `my-command` name on [package.json](./package.json):
+3. Update `my-command` name on [package.json](./package.json) and on [src/cli.ts](./src/cli.ts):
 
 ```json
 {
@@ -25,4 +25,8 @@ yarn custom
     "my-command": "cli.js"
   }
 }
+```
+
+```typescript
+  argv.scriptName('my-command');
 ```

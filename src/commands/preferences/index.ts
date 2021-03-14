@@ -1,11 +1,12 @@
-import inquirer from 'inquirer';
+import { CommandModule } from 'yargs';
 
-import preferencesStore, { Preferences } from '../../helper/preferencesStore';
-import { initialAnswers, questions } from './prompts';
+import handler from './handler';
 
-export default async function preferences(): Promise<void> {
-  const answers: Preferences = await inquirer.prompt(questions, initialAnswers);
-  (Object.keys(answers) as (keyof Preferences)[]).forEach((answerKey) =>
-    preferencesStore.set(answerKey, answers[answerKey]),
-  );
-}
+const command: CommandModule = {
+  describe: 'Set preferences',
+  command: 'preferences',
+  aliases: ['p'],
+  handler,
+};
+
+export default command;

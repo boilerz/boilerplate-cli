@@ -1,20 +1,22 @@
-import chalk from 'chalk';
-import execa from 'execa';
-import inquirer from 'inquirer';
-import ora from 'ora';
+import { CommandModule } from 'yargs';
 
-import { CommandParams } from '../typings';
-import { initialAnswers, questions, YoAnswers } from './prompts';
+import handler, { Color, YoArguments } from './handler';
 
-export default async function yo({ pkg }: CommandParams): Promise<void> {
-  const answers: YoAnswers = await inquirer.prompt(questions, initialAnswers);
-  console.log(chalk.blue('Version'), chalk.bgYellow(pkg.version));
+const colors: Color[] = ['red', 'blue', 'yellow'];
 
-  const spinner = ora('Yo').start();
+const command: CommandModule<Omit<YoArguments, 'color'>, YoArguments> = {
+  describe: 'Say yo',
+  command: 'yo <name> [color]',
+  aliases: ['hello'],
+  builder(args) {
+    return args.option('color', {
+      describe: 'Choose a color',
+      choices: colors,
+      default: 'blue',
+    });
+  },
+  handler,
+};
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  const { stdout } = await execa('echo', [answers.name]);
-
-  spinner.succeed(`🤘 ${chalk.red(stdout)}`);
-}
+export { YoArguments, Color } from './handler';
+export default command;
