@@ -1,11 +1,4 @@
 jest.mock('inquirer');
-jest.mock('meow', () =>
-  jest.fn().mockReturnValue({
-    flags: {},
-    showHelp: jest.fn(),
-    input: []
-  })
-);
 jest.mock('update-notifier', () =>
   jest.fn().mockReturnValue({
     notify: jest.fn()

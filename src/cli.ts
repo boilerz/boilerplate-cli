@@ -1,31 +1,25 @@
 #!/usr/bin/env node
-import chalk from 'chalk';
-import meow from 'meow';
 
-import run from './commands/run';
-import { Flags } from './commands/typings';
+import readPkgUp from 'read-pkg-up';
+import updateNotifier from 'update-notifier';
+import { Argv } from 'yargs';
+// @ts-ignore not typed yet
+import { hideBin } from 'yargs/helpers';
+import yargs from 'yargs/yargs';
 
-const flags: Flags = {
-  preferences: { type: 'boolean', alias: 'p' },
-  yo: { type: 'boolean', alias: 'y' },
-};
+import preferencesCommand from './commands/preferences';
+import yoCommand, { YoArguments } from './commands/yo';
 
-const cli = meow(
-  `
-  Usage
-    $ boilerplate
-  Options
-    --preferences, -p  Setup preferences.
-  Examples
-    $ boilerplate -p
-`,
-  {
-    flags,
-  },
-);
+export default function run(args: string[]): void {
+  updateNotifier({ pkg: readPkgUp.sync()?.packageJson }).notify();
+  const argv = yargs(args);
 
-run(cli).catch((err: Error) => {
-  console.log(chalk.bold.red(err.name), chalk.underline.red(err.message));
-  console.log(chalk.gray(err.stack));
-  process.exit(1);
-});
+  argv.scriptName('my-command');
+  argv.command(preferencesCommand);
+  (argv as Argv<YoArguments>).command(yoCommand);
+
+  argv.demandCommand().detectLocale(false).help().parse();
+}
+
+/* istanbul ignore if */
+if (!module.parent) run(hideBin(process.argv));
