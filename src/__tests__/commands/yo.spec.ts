@@ -24,7 +24,7 @@ describe('commands/yo', () => {
     expect(logSpy.mock.calls).toMatchInlineSnapshot(`
       Array [
         Array [
-          "🤘 [31mJohn[39m",
+          "🤘 John",
         ],
       ]
     `);

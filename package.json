@@ -15,7 +15,7 @@
     "typecheck": "tsc",
     "custom": "customBoilerplate",
     "build": "buildTSPackage",
-    "test": "jest --coverage",
+    "test": "FORCE_COLOR=0 jest --coverage",
     "codecov": "codecov",
     "cli": "node -r ts-node/register ./src/cli.ts"
   },
