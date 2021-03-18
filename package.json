@@ -27,7 +27,7 @@
     "@boilerz/tsconfig": "^1.4.7",
     "@boilerz/tsconfig-production": "^1.4.7",
     "@types/inquirer": "^7.3.1",
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^26.0.21",
     "@types/update-notifier": "^5.0.0",
     "@types/yargs": "^16.0.0",
     "codecov": "^3.8.1",
