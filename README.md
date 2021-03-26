@@ -30,3 +30,11 @@ yarn custom
 ```typescript
   argv.scriptName('my-command');
 ```
+
+4. Eventually enable auto versioning by removing `version: 'false'` in [.github/workflows/ci.yml](.github/workflows/ci.yml):
+
+```yaml
+      - uses: boilerz/action-version@master
+        with:
+          version: 'false'
+```
