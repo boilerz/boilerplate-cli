@@ -1,6 +1,6 @@
 {
   "name": "@gh_user/gh_repo_name",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.ts",
   "repository": "git@github.com:gh_user/gh_repo_name.git",
   "author": "gh_user",
