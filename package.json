@@ -49,6 +49,6 @@
     "ora": "^5.4.0",
     "read-pkg-up": "^7.0.1",
     "update-notifier": "^5.1.0",
-    "yargs": "^16.2.0"
+    "yargs": "^17.0.0"
   }
 }
