@@ -4,18 +4,7 @@ export async function runCommand(
   command: CommandModule<any, any>,
   args: string,
 ): Promise<void> {
-  return new Promise((resolve, reject) => {
-    try {
-      yargs
-        .scriptName('test')
-        .command(command)
-        .onFinishCommand(resolve)
-        .exitProcess(false)
-        .parse(args);
-    } catch (err) {
-      reject(err);
-    }
-  });
+  await yargs.scriptName('test').command(command).parse(args);
 }
 
 export function displayOutput(
