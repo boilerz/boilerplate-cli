@@ -42,7 +42,7 @@
     "node-notifier": "^9.0.0"
   },
   "dependencies": {
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "conf": "^10.1.1",
     "execa": "^5.1.1",
     "inquirer": "^8.2.0",
