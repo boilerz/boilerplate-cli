@@ -13,7 +13,9 @@ export default async function handler({
   name,
   color,
 }: Arguments<YoArguments>): Promise<void> {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => {
+    setTimeout(resolve, 1000);
+  });
   const { stdout } = await execa('echo', [name]);
   console.log(`🤘 ${chalk[color as Color](stdout)}`);
 }
