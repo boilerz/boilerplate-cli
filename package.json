@@ -45,7 +45,7 @@
     "chalk": "^4.1.2",
     "conf": "^10.2.0",
     "execa": "^5.1.1",
-    "inquirer": "^8.2.4",
+    "inquirer": "^9.1.0",
     "ora": "^6.1.2",
     "read-pkg-up": "^7.0.1",
     "update-notifier": "^6.0.2",
